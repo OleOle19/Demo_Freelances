@@ -1,7 +1,7 @@
 import fs from "node:fs";
 import path from "node:path";
+import { DatabaseSync } from "node:sqlite";
 import { fileURLToPath } from "node:url";
-import Database from "better-sqlite3";
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
@@ -12,8 +12,8 @@ fs.mkdirSync(dataDirectory, { recursive: true });
 const databasePath =
   process.env.DATABASE_PATH || path.join(dataDirectory, "demo.sqlite");
 
-const db = new Database(databasePath);
-db.pragma("journal_mode = WAL");
+const db = new DatabaseSync(databasePath);
+db.exec("PRAGMA journal_mode = WAL");
 
 db.exec(`
   CREATE TABLE IF NOT EXISTS leads (

@@ -9,7 +9,6 @@
     "check": "node --check src/index.js"
   },
   "dependencies": {
-    "better-sqlite3": "^11.8.1",
     "cors": "^2.8.5",
     "demo-freelances-showcase": "file:..",
     "express": "^4.19.2"
