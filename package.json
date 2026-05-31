@@ -6,6 +6,9 @@
     "dev:server": "npm --prefix server run dev",
     "dev:client": "npm --prefix client run dev",
     "build:client": "npm --prefix client run build",
+    "share:url": "node ops/share-cloudflare-url.mjs",
+    "share:url:stable": "node ops/share-cloudflare-url.mjs --stable",
+    "start:client": "node ops/preview-client.mjs",
     "start:server": "npm --prefix server run start"
   }
 }
